@@ -6,8 +6,15 @@
     <description>Recent content in Posts on Qun Gu</description>
     <generator>Hugo</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 24 Apr 2024 15:37:20 -0700</lastBuildDate>
+    <lastBuildDate>Wed, 24 Apr 2024 21:24:11 -0700</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Idefics Reading Notes</title>
+      <link>http://localhost:1313/posts/idefics-reading-notes/</link>
+      <pubDate>Wed, 24 Apr 2024 21:24:11 -0700</pubDate>
+      <guid>http://localhost:1313/posts/idefics-reading-notes/</guid>
+      <description>IDEFICS Code Reading Notes Background IDEFICS is a Multimodal Large Language Model (MLLM) or Vision-Language Model (VLM) published first on arXiv on June 21, 2023, and then on HuggingFace on August 22, 2023. I had a chance to use this model to do some experiment but I have never had investigate the package in depth.&#xA;Fortunately, the model is an open source code on the transformers repo on GitHub, which leaves me with some clues to learn more.</description>
+    </item>
     <item>
       <title>My First Post</title>
       <link>http://localhost:1313/posts/hello/</link>
