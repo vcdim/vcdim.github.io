@@ -17,3 +17,10 @@ theme = "paper"
   monoDarkIcon = true                       # show monochrome dark mode icon
   math = true                               # enable KaTeX math typesetting globally
 
+[menu]
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 10
