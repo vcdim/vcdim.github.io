@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Home on Qun Gu</title>
+    <title>Qun Gu</title>
     <link>http://localhost:1313/</link>
-    <description>Recent content in Home on Qun Gu</description>
+    <description>Recent content on Qun Gu</description>
     <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 24 Apr 2024 21:24:11 -0700</lastBuildDate>

@@ -1,109 +1,273 @@
-<!DOCTYPE html>
-<html lang="en-us"
-  dir="ltr">
-
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
-  <meta charset="utf-8">
-<meta name="viewport" content="width=device-width">
-<title>Idefics Reading Notes | Qun Gu</title>
-
-
-<link rel="stylesheet" href="/assets/combined.min.e962532feeb5740101e74674a3b76810a4b11df3e73378622fd233e3e9f06c82.css" media="all">
+<!doctype html>
 
 
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<html
+  class="not-ready lg:text-base"
+  style="--bg: #faf8f1"
+  lang="en-us"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, shrink-to-fit=no"
+  />
+
+  
+  <title>Idefics Reading Notes - Qun Gu</title>
+
+  
+  <meta name="theme-color" />
+
+  
+  
+  
+  
+  <meta name="description" content="IDEFICS Code Reading Notes Background IDEFICS is a Multimodal Large Language Model (MLLM) or Vision-Language Model (VLM) published first on arXiv on June 21, 2023, and then on HuggingFace on August 22, 2023. I had a chance to use this model to do some experiment but I have never had investigate the package in depth.
+Fortunately, the model is an open source code on the transformers repo on GitHub, which leaves me with some clues to learn more." />
+  <meta name="author" content="Qun Gu" />
+  
+
+  
+  
+  
+  
+  
+  
+  <link rel="preload stylesheet" as="style" href="http://localhost:1313/main.min.css" />
+
+  
+  
+  
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/theme.svg" />
+
+  
+  
+  
+  
+  
+
+  
+  
+  <link rel="preload" as="image" href="http://localhost:1313/rss.svg" />
+  
+  
+
+  
+  
+
+  
+  
+  
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.css"
+  integrity="sha384-3UiQGuEI4TTMaFmGIZumfRPtfKQ3trwQE2JgosJxCnGmQpL/lJdjpcHkaaFwHlcI"
+  crossorigin="anonymous"
+/>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/katex.min.js"
+  integrity="sha384-G0zcxDFp5LWZtDuRMnBkk3EphCK1lhEf4UEyEM693ka574TZGwo4IWwS6QLzM/2t"
+  crossorigin="anonymous"
+></script>
+<script
+  defer
+  src="https://cdn.jsdelivr.net/npm/katex@0.16.7/dist/contrib/auto-render.min.js"
+  integrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05"
+  crossorigin="anonymous"
+></script>
+
 <script>
-  MathJax = {
-    tex: {
-      displayMath: [['\\[', '\\]'], ['$$', '$$']],
-      inlineMath: [['\\[', '\\]'], ['$', '$']]
-    }
-  };
+  document.addEventListener('DOMContentLoaded', () =>
+    renderMathInElement(document.body, {
+      
+      
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false },
+      ],
+      
+      throwOnError: false,
+    }),
+  );
 </script>
 
+  
+  
+  
 
+  
+  <link rel="icon" href="http://localhost:1313/favicon.ico" />
+  <link rel="apple-touch-icon" href="http://localhost:1313/apple-touch-icon.png" />
 
+  
+  <meta name="generator" content="Hugo 0.125.3">
+
+  
+  
+  
 </head>
 
-
-
-
-
-<body class="auto">
-
-  <div class="content">
-    <header>
-      
-
-<div class="header">
-    <h1 class="header-title">Qun Gu</h1>
-
-    <div class="flex">
-        
-
-        
-        
-        <p class="small ">
-            <a href="/">
-                /home
-            </a>
-        </p>
-        
-        <p class="small ">
-            <a href="/posts">
-                /posts
-            </a>
-        </p>
-        
-        <p class="small ">
-            <a href="/about">
-                /about
-            </a>
-        </p>
-        
-        
-    </div>
-
-</div>
-    </header>
-
-    <main class="main">
-      
-
-
-
-<div >
-
-  <div class=" single-intro-container">
-
-    
-
-    <h1 class="single-title">Idefics Reading Notes</h1>
-    
-
-    
-
-    <p class="single-readtime">
-      
-      
-      
-      <time datetime="2024-04-24T21:24:11-07:00">April 24, 2024</time>
-      -
-      
-      
-    </p>
-
+  <body class="text-black duration-200 ease-out dark:text-white">
+    <header class="mx-auto flex h-[4.5rem] max-w-3xl px-8 lg:justify-center">
+  <div class="relative z-50 mr-auto flex items-center">
+    <a
+      class="-translate-x-[1px] -translate-y-[1px] text-2xl font-semibold"
+      href="http://localhost:1313/"
+      >Qun Gu</a
+    >
+    <div
+      class="btn-dark text-[0] ml-4 h-6 w-6 shrink-0 cursor-pointer [background:url(./theme.svg)_left_center/cover_no-repeat] dark:invert dark:[background-position:right]"
+      role="button"
+      aria-label="Dark"
+    ></div>
   </div>
 
-  
+  <div
+    class="btn-menu relative z-50 -mr-8 flex h-[4.5rem] w-[5rem] shrink-0 cursor-pointer flex-col items-center justify-center gap-2.5 lg:hidden"
+    role="button"
+    aria-label="Menu"
+  ></div>
 
   
 
-  
+  <script>
+    
+    const htmlClass = document.documentElement.classList;
+    setTimeout(() => {
+      htmlClass.remove('not-ready');
+    }, 10);
 
-  <div class="single-content">
-    <h2 id="idefics-code-reading-notes">IDEFICS Code Reading Notes</h2>
+    
+    const btnMenu = document.querySelector('.btn-menu');
+    btnMenu.addEventListener('click', () => {
+      htmlClass.toggle('open');
+    });
+
+    
+    const metaTheme = document.querySelector('meta[name="theme-color"]');
+    const lightBg = '#faf8f1'.replace(/"/g, '');
+    const setDark = (isDark) => {
+      metaTheme.setAttribute('content', isDark ? '#000' : lightBg);
+      htmlClass[isDark ? 'add' : 'remove']('dark');
+      localStorage.setItem('dark', isDark);
+    };
+
+    
+    const darkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    if (htmlClass.contains('dark')) {
+      setDark(true);
+    } else {
+      const darkVal = localStorage.getItem('dark');
+      setDark(darkVal ? darkVal === 'true' : darkScheme.matches);
+    }
+
+    
+    darkScheme.addEventListener('change', (event) => {
+      setDark(event.matches);
+    });
+
+    
+    const btnDark = document.querySelector('.btn-dark');
+    btnDark.addEventListener('click', () => {
+      setDark(localStorage.getItem('dark') !== 'true');
+    });
+  </script>
+
+  <div
+    class="nav-wrapper fixed inset-x-0 top-full z-40 flex h-full select-none flex-col justify-center pb-16 duration-200 dark:bg-black lg:static lg:h-auto lg:flex-row lg:!bg-transparent lg:pb-0 lg:transition-none"
+  >
+    
+    
+    <nav class="lg:ml-12 lg:flex lg:flex-row lg:items-center lg:space-x-6">
+      
+      <a
+        class="block text-center text-2xl leading-[5rem] lg:text-base lg:font-normal"
+        href="/about/"
+        >About</a
+      >
+      
+    </nav>
+    
+
+    
+    <nav
+      class="mt-12 flex justify-center space-x-10 dark:invert lg:ml-12 lg:mt-0 lg:items-center lg:space-x-6"
+    >
+      
+      <a
+        class="h-8 w-8 text-[0] [background:var(--url)_center_center/cover_no-repeat] lg:h-6 lg:w-6"
+        style="--url: url(./rss.svg)"
+        href="http://localhost:1313/index.xml"
+        target="_blank"
+        rel="alternate"
+      >
+        rss
+      </a>
+      
+    </nav>
+    
+  </div>
+</header>
+
+
+    <main
+      class="prose prose-neutral relative mx-auto min-h-[calc(100%-9rem)] max-w-3xl px-8 pb-16 pt-12 dark:prose-invert"
+    >
+      
+
+<article>
+  <header class="mb-16">
+    <h1 class="!my-0 pb-2.5">Idefics Reading Notes</h1>
+
+    
+    <div class="text-sm antialiased opacity-60">
+      
+      <time>Apr 24, 2024</time>
+      
+      
+      
+      
+    </div>
+    
+  </header>
+
+  <section><h2 id="idefics-code-reading-notes">IDEFICS Code Reading Notes</h2>
 <h3 id="background">Background</h3>
 <p>IDEFICS is a <strong>M</strong>ultimodal <strong>L</strong>arge <strong>L</strong>anguage <strong>M</strong>odel (MLLM) or <strong>V</strong>ision-<strong>L</strong>anguage <strong>M</strong>odel (VLM) published first on <a href="https://arxiv.org/abs/2306.16527">arXiv</a> on June 21, 2023, and then on <a href="https://huggingface.co/blog/idefics">HuggingFace</a> on August 22, 2023. I had a chance to use this model to do some experiment but I have never had investigate the package in depth.</p>
 <p>Fortunately, the model is an open source code on the <code>transformers</code> repo on <a href="https://github.com/huggingface/transformers/tree/main/src/transformers/models/idefics">GitHub</a>, which leaves me with some clues to learn more.</p>
@@ -115,86 +279,86 @@
 <p>[!NOTE] <code>dataclasses</code></p>
 </blockquote>
 <p>First, the first clause is</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">dataclasses</span> <span style="color:#a2f;font-weight:bold">import</span> dataclass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
 </span></span></code></pre></div><p>Here, <code>dataclasses</code> is a Python Standard Library which I didn&rsquo;t use frequently before. It is a <code>decorator</code> which is conceptually wrapper (of a function). <code>decorator</code> can also be put in front of a class, which makes writing class much easier. On the <a href="https://docs.python.org/3/library/dataclasses.html">documentation</a> of <code>dataclasses</code>, there is a very good illustrative example. For the code below,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">dataclasses</span> <span style="color:#a2f;font-weight:bold">import</span> dataclass
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> dataclasses <span style="color:#f92672">import</span> dataclass
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#a2f">@dataclass</span>
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">InventoryItem</span>:
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;&#34;&#34;Class for keeping track of an item in inventory.&#34;&#34;&#34;</span>
-</span></span><span style="display:flex;"><span>    name: <span style="color:#a2f">str</span>
-</span></span><span style="display:flex;"><span>    unit_price: <span style="color:#a2f">float</span>
-</span></span><span style="display:flex;"><span>    quantity_on_hand: <span style="color:#a2f">int</span> <span style="color:#666">=</span> <span style="color:#666">0</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">@dataclass</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InventoryItem</span>:
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;&#34;&#34;Class for keeping track of an item in inventory.&#34;&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>    name: str
+</span></span><span style="display:flex;"><span>    unit_price: float
+</span></span><span style="display:flex;"><span>    quantity_on_hand: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">def</span> <span style="color:#00a000">total_cost</span>(self) <span style="color:#666">-&gt;</span> <span style="color:#a2f">float</span>:
-</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">return</span> self<span style="color:#666">.</span>unit_price <span style="color:#666">*</span> self<span style="color:#666">.</span>quantity_on_hand
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_cost</span>(self) <span style="color:#f92672">-&gt;</span> float:
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> self<span style="color:#f92672">.</span>unit_price <span style="color:#f92672">*</span> self<span style="color:#f92672">.</span>quantity_on_hand
 </span></span></code></pre></div><p><code>@dataclass</code> will add an initial function <code>__init__()</code> that looks like this:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">def</span> __init__(self, name: <span style="color:#a2f">str</span>, unit_price: <span style="color:#a2f">float</span>, quantity_on_hand: <span style="color:#a2f">int</span> <span style="color:#666">=</span> <span style="color:#666">0</span>):
-</span></span><span style="display:flex;"><span>    self<span style="color:#666">.</span>name <span style="color:#666">=</span> name
-</span></span><span style="display:flex;"><span>    self<span style="color:#666">.</span>unit_price <span style="color:#666">=</span> unit_price
-</span></span><span style="display:flex;"><span>    self<span style="color:#666">.</span>quantity_on_hand <span style="color:#666">=</span> quantity_on_hand
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">def</span> __init__(self, name: str, unit_price: float, quantity_on_hand: int <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>):
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>name <span style="color:#f92672">=</span> name
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>unit_price <span style="color:#f92672">=</span> unit_price
+</span></span><span style="display:flex;"><span>    self<span style="color:#f92672">.</span>quantity_on_hand <span style="color:#f92672">=</span> quantity_on_hand
 </span></span></code></pre></div><blockquote>
 <p>[!NOTE] <code>typing</code></p>
 </blockquote>
 <p>The second clause:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">typing</span> <span style="color:#a2f;font-weight:bold">import</span> Any, Dict, List, Optional, Tuple, Union
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> typing <span style="color:#f92672">import</span> Any, Dict, List, Optional, Tuple, Union
 </span></span></code></pre></div><p>is also something I haven&rsquo;t been using very often. It enables a more strict way of programming Python.</p>
 <p>Then, there are 5 lines of PyTorch imports, pretty commonly seen.</p>
 <blockquote>
 <p>[!NOTE] <code>relative imports</code></p>
 </blockquote>
 <p>After that, there are some relative imports from this package:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">...</span> <span style="color:#a2f;font-weight:bold">import</span> PreTrainedModel
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">...activations</span> <span style="color:#a2f;font-weight:bold">import</span> ACT2FN
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">...modeling_attn_mask_utils</span> <span style="color:#a2f;font-weight:bold">import</span> _prepare_4d_causal_attention_mask_for_sdpa
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">...modeling_outputs</span> <span style="color:#a2f;font-weight:bold">import</span> ModelOutput
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">...modeling_utils</span> <span style="color:#a2f;font-weight:bold">import</span> PretrainedConfig
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">...pytorch_utils</span> <span style="color:#a2f;font-weight:bold">import</span> ALL_LAYERNORM_LAYERS
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">...utils</span> <span style="color:#a2f;font-weight:bold">import</span> (
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#f92672">from</span> ... <span style="color:#f92672">import</span> PreTrainedModel
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ...activations <span style="color:#f92672">import</span> ACT2FN
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ...modeling_attn_mask_utils <span style="color:#f92672">import</span> _prepare_4d_causal_attention_mask_for_sdpa
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ...modeling_outputs <span style="color:#f92672">import</span> ModelOutput
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ...modeling_utils <span style="color:#f92672">import</span> PretrainedConfig
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ...pytorch_utils <span style="color:#f92672">import</span> ALL_LAYERNORM_LAYERS
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> ...utils <span style="color:#f92672">import</span> (
 </span></span><span style="display:flex;"><span>    add_start_docstrings,
 </span></span><span style="display:flex;"><span>    add_start_docstrings_to_model_forward,
 </span></span><span style="display:flex;"><span>    logging,
 </span></span><span style="display:flex;"><span>    replace_return_docstrings,
 </span></span><span style="display:flex;"><span>)
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">.configuration_idefics</span> <span style="color:#a2f;font-weight:bold">import</span> IdeficsConfig
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">.perceiver</span> <span style="color:#a2f;font-weight:bold">import</span> IdeficsPerceiverResampler
-</span></span><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">from</span> <span style="color:#00f;font-weight:bold">.vision</span> <span style="color:#a2f;font-weight:bold">import</span> IdeficsVisionTransformer
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .configuration_idefics <span style="color:#f92672">import</span> IdeficsConfig
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .perceiver <span style="color:#f92672">import</span> IdeficsPerceiverResampler
+</span></span><span style="display:flex;"><span><span style="color:#f92672">from</span> .vision <span style="color:#f92672">import</span> IdeficsVisionTransformer
 </span></span></code></pre></div><p>One dot is current directory (<code>idefics</code>). Two dots is parent directory (<code>models</code>). Three docs is grandparent directory (<code>transformers</code>).</p>
 <blockquote>
 <p>[!NOTE] <code>A dictionary with function with arguments</code></p>
 </blockquote>
 <p><code>ACT2FN</code> is defined in the <code>activations.py</code> under <code>transformers</code> folder as</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ACT2FN <span style="color:#666">=</span> ClassInstantier(ACT2CLS)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ACT2FN <span style="color:#f92672">=</span> ClassInstantier(ACT2CLS)
 </span></span></code></pre></div><p>where <code>ACT2CLS</code> is a dictionary,</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ACT2CLS <span style="color:#666">=</span> {
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;gelu&#34;</span>: GELUActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;gelu_10&#34;</span>: (ClippedGELUActivation, {<span style="color:#b44">&#34;min&#34;</span>: <span style="color:#666">-</span><span style="color:#666">10</span>, <span style="color:#b44">&#34;max&#34;</span>: <span style="color:#666">10</span>}),
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;gelu_fast&#34;</span>: FastGELUActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;gelu_new&#34;</span>: NewGELUActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;gelu_python&#34;</span>: (GELUActivation, {<span style="color:#b44">&#34;use_gelu_python&#34;</span>: <span style="color:#a2f;font-weight:bold">True</span>}),
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;gelu_pytorch_tanh&#34;</span>: PytorchGELUTanh,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;gelu_accurate&#34;</span>: AccurateGELUActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;laplace&#34;</span>: LaplaceActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;leaky_relu&#34;</span>: nn<span style="color:#666">.</span>LeakyReLU,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;linear&#34;</span>: LinearActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;mish&#34;</span>: MishActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;quick_gelu&#34;</span>: QuickGELUActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;relu&#34;</span>: nn<span style="color:#666">.</span>ReLU,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;relu2&#34;</span>: ReLUSquaredActivation,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;relu6&#34;</span>: nn<span style="color:#666">.</span>ReLU6,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;sigmoid&#34;</span>: nn<span style="color:#666">.</span>Sigmoid,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;silu&#34;</span>: nn<span style="color:#666">.</span>SiLU,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;swish&#34;</span>: nn<span style="color:#666">.</span>SiLU,
-</span></span><span style="display:flex;"><span>    <span style="color:#b44">&#34;tanh&#34;</span>: nn<span style="color:#666">.</span>Tanh,
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ACT2CLS <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gelu&#34;</span>: GELUActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gelu_10&#34;</span>: (ClippedGELUActivation, {<span style="color:#e6db74">&#34;min&#34;</span>: <span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>, <span style="color:#e6db74">&#34;max&#34;</span>: <span style="color:#ae81ff">10</span>}),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gelu_fast&#34;</span>: FastGELUActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gelu_new&#34;</span>: NewGELUActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gelu_python&#34;</span>: (GELUActivation, {<span style="color:#e6db74">&#34;use_gelu_python&#34;</span>: <span style="color:#66d9ef">True</span>}),
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gelu_pytorch_tanh&#34;</span>: PytorchGELUTanh,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;gelu_accurate&#34;</span>: AccurateGELUActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;laplace&#34;</span>: LaplaceActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;leaky_relu&#34;</span>: nn<span style="color:#f92672">.</span>LeakyReLU,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;linear&#34;</span>: LinearActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;mish&#34;</span>: MishActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;quick_gelu&#34;</span>: QuickGELUActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;relu&#34;</span>: nn<span style="color:#f92672">.</span>ReLU,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;relu2&#34;</span>: ReLUSquaredActivation,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;relu6&#34;</span>: nn<span style="color:#f92672">.</span>ReLU6,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;sigmoid&#34;</span>: nn<span style="color:#f92672">.</span>Sigmoid,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;silu&#34;</span>: nn<span style="color:#f92672">.</span>SiLU,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;swish&#34;</span>: nn<span style="color:#f92672">.</span>SiLU,
+</span></span><span style="display:flex;"><span>    <span style="color:#e6db74">&#34;tanh&#34;</span>: nn<span style="color:#f92672">.</span>Tanh,
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>whose keys are shorthands of activation functions classes (PyTorch Module), and values are the activation function class themselves. The <code>ClassInstantier</code> is defined just above</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#a2f;font-weight:bold">class</span> <span style="color:#00f">ClassInstantier</span>(OrderedDict):
-</span></span><span style="display:flex;"><span>    <span style="color:#a2f;font-weight:bold">def</span> __getitem__(self, key):
-</span></span><span style="display:flex;"><span>        content <span style="color:#666">=</span> <span style="color:#a2f">super</span>()<span style="color:#666">.</span>__getitem__(key)
-</span></span><span style="display:flex;"><span>        cls, kwargs <span style="color:#666">=</span> content <span style="color:#a2f;font-weight:bold">if</span> <span style="color:#a2f">isinstance</span>(content, <span style="color:#a2f">tuple</span>) <span style="color:#a2f;font-weight:bold">else</span> (content, {})
-</span></span><span style="display:flex;"><span>        <span style="color:#a2f;font-weight:bold">return</span> cls(<span style="color:#666">**</span>kwargs)
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ClassInstantier</span>(OrderedDict):
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">def</span> __getitem__(self, key):
+</span></span><span style="display:flex;"><span>        content <span style="color:#f92672">=</span> super()<span style="color:#f92672">.</span>__getitem__(key)
+</span></span><span style="display:flex;"><span>        cls, kwargs <span style="color:#f92672">=</span> content <span style="color:#66d9ef">if</span> isinstance(content, tuple) <span style="color:#66d9ef">else</span> (content, {})
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">return</span> cls(<span style="color:#f92672">**</span>kwargs)
 </span></span></code></pre></div><p>which is a subclass that inherits <code>OrderedDict</code>, where <code>__getitem__</code> is getting override. Effectively, when one call</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ACT2FN[<span style="color:#b44">&#34;relu&#34;</span>]
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>ACT2FN[<span style="color:#e6db74">&#34;relu&#34;</span>]
 </span></span></code></pre></div><p>one will get a <code>nn.ReLU</code> module.</p>
 <p>In the <code>modeling_attn_mask_utils</code> there is a function <code>_prepare_4d_causal_attention_mask_for_sdpa</code> getting imported. Here, SDPA means <strong>S</strong>caled <strong>D</strong>ot <strong>P</strong>roduct <strong>A</strong>ttention, which is a critical layer in transformer models. The code is a bit daunting at first look, but I can at least get a sense what is going on at high level.</p>
 <p>This function takes a attention mask, input shape, inputs embeddings, past key value length, sliding window as inputs. And outputs a expanded 4d mask. At first, an attention mask converter is getting created. The new key value length is the current input shape plus the past key value length. Then a boolean variable <code>is_tracing</code> is defined, which seems magical. Then, a ignore causal mask is getting created. If is not None, then return None. If attention mask is None, then it&rsquo;s some how generated. Otherwise, attention mask is not None, and there are some other steps to generate the expanded 4d mask.</p>
@@ -219,64 +383,47 @@
 <li><a href="https://jalammar.github.io/illustrated-transformer/">Illustrated Transformer by Jay Alammar</a></li>
 <li><a href="https://www.tensorflow.org/text/tutorials/transformer">Tensorflow Tutorial on Transformer</a></li>
 </ul>
+</section>
 
-  </div>
+  
+  
 
-</div>
+  
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+</article>
 
 
     </main>
+
+    <footer
+  class="opaco mx-auto flex h-[4.5rem] max-w-3xl items-center px-8 text-[0.9em] opacity-60"
+>
+  <div class="mr-auto">
+    &copy; 2024
+    <a class="link" href="http://localhost:1313/">Qun Gu</a>
   </div>
+  <a class="link mx-6" href="https://gohugo.io/" rel="noopener" target="_blank"
+    >Powered by Hugo️️</a
+  >️
+  <a
+    class="link"
+    href="https://github.com/nanxiaobei/hugo-paper"
+    rel="noopener"
+    target="_blank"
+    >✎ Paper</a
+  >
+</footer>
 
-  <footer>
-    <p>Powered by
-    <a href="https://gohugo.io/">Hugo</a>
-    and
-    <a href="https://github.com/tomfran/typo">tomfran/typo</a>
-</p>
-  </footer>
-
-</body>
-
-
-<script>
-
-  function isAuto() {
-    return document.body.classList.contains("auto");
-  }
-
-  function setTheme() {
-    if (!isAuto()) {
-      return
-    }
-
-    console
-    document.body.classList.remove("auto");
-    let cls = "light";
-
-    console.log
-
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      cls = "dark";
-    }
-
-    document.body.classList.add(cls);
-
-  }
-
-  function invert() {
-    document.body.classList.toggle("dark");
-    document.body.classList.toggle("light");
-  }
-
-  if (isAuto()) {
-    console.log("Setting invert listener");
-    window.matchMedia('(prefers-color-scheme: dark)').addListener(invert);
-  }
-
-  setTheme();
-
-</script>
-
-
+  </body>
 </html>
