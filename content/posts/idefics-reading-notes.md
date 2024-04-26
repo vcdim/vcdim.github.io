@@ -1,25 +1,24 @@
 +++
-title = 'Idefics Reading Notes'
+title = 'Idefics Code Reading Notes'
 date = 2024-04-24T21:24:11-07:00
+toc = true
 +++
 
-## IDEFICS Code Reading Notes
-
-### Background
+## Background
 
 IDEFICS is a **M**ultimodal **L**arge **L**anguage **M**odel (MLLM) or **V**ision-**L**anguage **M**odel (VLM) published first on [arXiv](https://arxiv.org/abs/2306.16527) on June 21, 2023, and then on [HuggingFace](https://huggingface.co/blog/idefics) on August 22, 2023. I had a chance to use this model to do some experiment but I have never had investigate the package in depth.
 
 Fortunately, the model is an open source code on the `transformers` repo on [GitHub](https://github.com/huggingface/transformers/tree/main/src/transformers/models/idefics), which leaves me with some clues to learn more.
 
-### Structure
+## Structure
 
 In the `idefics` folder, there are 7 files, including `__init__.py`. We have `configuration_idefics.py`, `image_processing_idefics.py`, `modeling_idefics.py`, `perceiver.py`, `processing_idefics.py`, and `vision.py`. Reading from name, seems that `modeling_idefics.py` is probably a good starting point.
 
-#### Modeling
+### Modeling
 
 Opening `modeling_idefics.py`, we have a pretty large file that contains 1588 lines of code. I am learning some very basic things from this code.
 
-> [!NOTE] `dataclasses`
+> **Learning Point 1** - `dataclasses`
 
 First, the first clause is
 
@@ -52,7 +51,7 @@ def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0):
     self.quantity_on_hand = quantity_on_hand
 ```
 
-> [!NOTE] `typing`
+> **Learning Point 2** - `typing`
 
 The second clause:
 
@@ -64,7 +63,7 @@ is also something I haven't been using very often. It enables a more strict way 
 
 Then, there are 5 lines of PyTorch imports, pretty commonly seen.
 
-> [!NOTE] `relative imports`
+> **Learning Point 3** - relative import
 
 After that, there are some relative imports from this package:
 
@@ -88,7 +87,7 @@ from .vision import IdeficsVisionTransformer
 
 One dot is current directory (`idefics`). Two dots is parent directory (`models`). Three docs is grandparent directory (`transformers`).
 
-> [!NOTE] `A dictionary with function with arguments`
+> **Learning Point 4** --- A dictionary with function with arguments
 
 `ACT2FN` is defined in the `activations.py` under `transformers` folder as
 
