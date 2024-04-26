@@ -1,30 +1,6 @@
 baseURL = 'https://vcdim.github.io/'
 languageCode = 'en-us'
 title = 'Qun Gu'
-# theme = "paper"
-# [params]
-#   # color style
-#   color = 'linen'                           # linen, wheat, gray, light
-
-#   # header social icons
-#   rss = true                                # show rss icon
-
-#   # misc
-#   disableHLJS = true                        # disable highlight.js
-#   disablePostNavigation = true              # disable post navigation
-#   monoDarkIcon = true                       # show monochrome dark mode icon
-#   math = true                               # enable KaTeX math typesetting globally
-
-# [menu]
-
-#   [[menu.main]]
-#     identifier = "about"
-#     name = "About"
-#     url = "/about/"
-#     weight = 10
-
-
-
 theme = "typo"
 
 # Disable tags, actually, they are rendered as a list, but the idea is to disable them.

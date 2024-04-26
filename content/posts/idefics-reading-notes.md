@@ -143,14 +143,21 @@ In the `modeling_attn_mask_utils` there is a function `_prepare_4d_causal_attent
 
 This function takes a attention mask, input shape, inputs embeddings, past key value length, sliding window as inputs. And outputs a expanded 4d mask. At first, an attention mask converter is getting created. The new key value length is the current input shape plus the past key value length. Then a boolean variable `is_tracing` is defined, which seems magical. Then, a ignore causal mask is getting created. If is not None, then return None. If attention mask is None, then it's some how generated. Otherwise, attention mask is not None, and there are some other steps to generate the expanded 4d mask.
 
-The unknowns to me are:
+I know the above paragraph is a bit hard to get because I haven't fully got it. But there are some other questions in my mind.
 
-- What is `AttentionMaskConverter`?
-  - What does `_ignore_causal_mask_sdpa` do?
-  - What does `to_causal_4d` do?
-  - What does `to_4d` do?
-  - What does `_unmask_unattended` do?
-- What is the difference between `Union` and `Tuple`?
+About `AttentionMaskConverter`
+- What does `_ignore_causal_mask_sdpa` do?
+- What does `to_causal_4d` do?
+- What does `to_4d` do?
+- What does `_unmask_unattended` do?
+
+> **Learning Point 5** --- What is `Union`?
+> 
+> Union is another name for "or" or "$\cup$" that is used for construct a supertype, e.g. `var: str | None` accepts a variable that is either string or `None`.
+
+
+
+
 - What is `torch.jit.is_tracing`?
 - What is `torch.fx.Proxy`?
 - What is `torch._dynamo`?
