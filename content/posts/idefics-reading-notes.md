@@ -175,16 +175,7 @@ This is the first class of this file. It contains a past key/values to speed up 
 
 #### `IdeficsCausalLMOutputWithPast`
 
-Very similar to the previous one, but with 6 additional variables:
-
-- `loss` 
-- `logits`
-- `past_key_values`
-- `hidden_states`
-- `attentions`
-- `image_hidden_states`
-
-So no `last_hidden_state`, but with 2 additional variables: `loss` and `logits`.
+Very similar to the previous one, but with 6 additional variables: It doesn't have `last_hidden_state` variable, but with 2 additional variables: `loss` and `logits`.
 
 #### `expand_inputs_for_generation`
 
