@@ -16,6 +16,8 @@ In the `idefics` folder, there are 7 files, including `__init__.py`. We have `co
 
 ### Modeling
 
+#### Imports
+
 Opening `modeling_idefics.py`, we have a pretty large file that contains 1588 lines of code. I am learning some very basic things from this code.
 
 > **Learning Point 1** - `dataclasses`
@@ -145,23 +147,56 @@ This function takes a attention mask, input shape, inputs embeddings, past key v
 
 I know the above paragraph is a bit hard to get because I haven't fully got it. But there are some other questions in my mind.
 
+> **Learning Point 5** --- What is `Union`?
+
+Union is another name for "or" or "$\cup$" that is used for construct a supertype, e.g. `var: str | None` accepts a variable that is either string or `None`.
+
+> **Learning Point 6** --- `torch`
+
+**What is `torch.finfo`?** `torch.finfo` is similar to `numpy.finfo`, which gives the information of float type. There is a related routine called `iinfo` which gives the information for the integer type. By information, we mean, min, max, precision, etc.
+
+**What is `torch.jit.is_tracing`? What is `torch.fx.Proxy`? What is `torch._dynamo`?** These are all related with computational graph, compiler of torch, which is aiming at high performance computing.
+
+Continue reading, there are some other classes getting imported, e.g. `ModelOutput`, `PretrainedConfig`, `ALL_LAYERNORM_LAYERS`, 3 routines related to docstrings, and 1 with logging.
+ 
+There are 3 more classes coming from the current package: `IdeficsConfig`, `IdeficsPerceiverResampler`, and `IdeficsVisionTransformer`. There is one more constant that is getting imported, that is `IDEFICS_PRETRAINED_MODEL_ARCHIVE_LIST`.
+
+Logging is set to `logger` global variable, and `_CONFIG_FOR_DOC` is a string called `"IdeficsConfig"`.
+
+#### `IdeficsBaseModelOutputWithPast`
+
+This is the first class of this file. It contains a past key/values to speed up sequential decoding. It is a subclass of `ModelOutput`, where there are 5 additional variables:
+
+- `last_hidden_state` --- float tensor
+- `past_key_values` --- ((float tensor, float tensor), (float tensor, float tensor), ...)
+- `hidden_states` --- (float tensor, float tensor, ...)
+- `attentions` --- (float tensor, float tensor, ...)
+- `image_hidden_states`  --- (float tensor, float tensor, ...)
+
+#### `IdeficsCausalLMOutputWithPast`
+
+Very similar to the previous one, but with 6 additional variables:
+
+- `loss` 
+- `logits`
+- `past_key_values`
+- `hidden_states`
+- `attentions`
+- `image_hidden_states`
+
+So no `last_hidden_state`, but with 2 additional variables: `loss` and `logits`.
+
+#### `expand_inputs_for_generation`
+
+## Remaining Questions
+
 About `AttentionMaskConverter`
+
 - What does `_ignore_causal_mask_sdpa` do?
 - What does `to_causal_4d` do?
 - What does `to_4d` do?
 - What does `_unmask_unattended` do?
 
-> **Learning Point 5** --- What is `Union`?
-> 
-> Union is another name for "or" or "$\cup$" that is used for construct a supertype, e.g. `var: str | None` accepts a variable that is either string or `None`.
-
-
-
-
-- What is `torch.jit.is_tracing`?
-- What is `torch.fx.Proxy`?
-- What is `torch._dynamo`?
-- What is `torch.finfo`?
 
 ## Further reading
 

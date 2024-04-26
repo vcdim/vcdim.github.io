@@ -97,7 +97,7 @@ params:
       url: "https://ko-fi.com/guqun"
 
   editPost:
-    URL: "https://github.com/vcdim/vcdim.github.io/content"
+    URL: "https://github.com/vcdim/vcdim.github.io/tree/main/content"
     Text: "Suggest Changes" # edit text
     appendFilePath: true # to append file path to Edit link
 
