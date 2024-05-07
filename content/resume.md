@@ -92,7 +92,7 @@ Full scholarship sponsored by [Chinese Scholarship Council](https://www.chineses
 - (with Nixon Li, Nikolaos Chatzipanagiotis, Mohammad Abuzar Hashemi, Piyush Gahlot, Larkin Flodin), Uncertainty Quantification for Neural Networks with Scalable Monte Carlo Dropout, *Amazon Machine Learning Conference*, 2022. (workshop poster).
 - (with Mohammad Abuzar Hashemi, Nikolaos Chatzipanagiotis, Nixon Li, Larkin Flodin, Piyush Gahlot, Prag Mishra), Improving Onsite-Content Attribution with Attention, *Amazon Machine Learning Conference*, 2022. (oral presentation).
 - (with Weiguo Gao, Carlos J. García-Cervera), High Order Finite Difference Discretization for Composite Grid Hierarchy and Its Applications. *Commun. Comput. Phys.* **18**(5), 2015, pp. 1211-1233.
-- (with Weiguo Gao), Inexact Two-Grid Methods for Eigenvalue Problems. J. Comp. Math., 6, 2015, pp. 557-575.
+- (with Weiguo Gao), Inexact Two-Grid Methods for Eigenvalue Problems. J. Comp. Math., **6**, 2015, pp. 557-575.
 - (with Hongfang Li, Yin Luo, Weikang Chen, and Wanheng Zhong), The statistical law of the nearly independent particle system (III) --- Canonical distribution function and energy fluctuation formula. *College Physics*, **29**(1), 2010.
 - (with Hongfang Li, Weikang Chen, Yin Luo, and Wanheng Zhong), The statistical law of the nearly independent particle system (IV) --- Grand canonical distribution function. *College Physics*, **29**(1), 2010.
 
