@@ -40,8 +40,8 @@ name = "posts"
 url = "/posts"
 
 [[params.menu]]
-name = "about"
-url = "/about"
+name = "resume"
+url = "/resume"
 
 # Syntax highligth on code blocks, all styles: 
 # https://xyproto.github.io/splash/docs/all.html
