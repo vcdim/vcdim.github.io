@@ -1,6 +1,6 @@
 ---
 title: "My First Post"
-date: 2024-04-24T15:37:20-07:00
+xdate: 2024-04-24T15:37:20-07:00
 # bookComments: false
 # bookSearchExclude: false
 ---
