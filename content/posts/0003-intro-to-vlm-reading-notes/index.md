@@ -150,3 +150,9 @@ Here,
 > "We understand the contrastive loss and auto-encoding loss as implementations of distortions, whereas the rate is mostly determined by the data transformation used."
 
 ### Generative-based VLMs
+
+Instead of learning abstraction, generative paradigm considers the generation text and/or image.
+
+- CoCa [Yu et al., 2022b]: learn a complete text encoder and decoder --- enable image captioning.
+- Chameleon [Chameleon Team, 2024] and CM3leon[Yu et al., 2023] --- generate both text & image
+- Generate image based on text --- Stable Diffusion [Rombach et al., 2022], Imagen [Saharia et al., 2022], Parti [Yu et al., 2022c].
