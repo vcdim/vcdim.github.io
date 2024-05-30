@@ -42,7 +42,7 @@ In the introduction, the authors throw at the readers with a list of questions:
 
 Honestly, these are probably good questions for a job interview (and I don't know everything, that's why I am reading).
 
-## Chapter 2. The Families of VLMs
+## 2. The Families of VLMs
 
 Bridging CV and NLP is hot. This paper focus on models based on transformers. Models can be categorized into 4 training paradigms:
 
@@ -73,7 +73,7 @@ p_\theta(x) = \frac1{Z_0} \mathrm e^{-E_\theta(x)}
 $$
 where $Z_\theta = \sum_x \mathrm e^{-E_\theta(x)}$ is the partition function (normalization coefficient).
 
-Let the target distribution be $P_D$. The traditional maximum likelihood objective is $$ \text{arg}\min_\theta \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)] $$
+Let the target distribution be $P_D$. The traditional maximum likelihood objective is $$ \argmin_\theta \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)] $$
 
 > **Note**:
 > $P_\theta(x)$ is the same as $p_\theta(x)$, right?
@@ -123,3 +123,30 @@ A major draw back is InfoNCE requires a large mini-batch to learn positive and n
 - SigLIP [Zhai et al., 2023b] imporved binary InfoNCE to multi-class InfoNCE.
 - Latent Language Image Pretraining (LLIP) [Lavoie et al., 2024] improved CLIP by consideration on an image can have multiple captions.
 
+### VLMs with Masking Objectives
+
+Masking can be viewed as a specific form of denoising autoencoder [Vincent et al., 2008]. It's also related to image inpainting [Pathak et al., 2016], or Masked Language Modeling (MLM) introduced in BERT [Devlin et al., 2019]. There are also attempts to do Masked Imaging Modeling (MIM), e.g. Masked AutoEncoder (MAE) [He et al., 2022] or Image with a Joint-Embedding Predictive Architecture (I-JEPA) [Assran et al., 2023]. Recent works that combining vision and language are Foundational Language And Vision Alignment (FLAVA) [Singh et al., 2022], MaskVLM [Kwon et al., 2023].
+
+**Information theoretic view on VLM objectives.** [Federici et al., 2020] first show that VLMs can be understood to solve a rate-distortion problem. A rate-distortion problem takes the following form [Shwartz and LeCun, 2024]
+$$
+\argmin_{p(z|x)}~~ I(f(X); Z) + \beta \cdot H(X | Z).
+$$
+To recover masked VLM objective, we bound the above equation;
+$$
+\mathcal L = \sum_{x\in\mathcal D} \mathbb E_{p(f) p(Z|f(x))} [\log q(z) + \beta \cdot \log q(x|z)].
+$$
+Here,
+
+- $\log q(z)$ is the entropy bottleneck.
+- $I(f(X); Z)$ is bounding the rate, removing superfluous information.
+- $H(Z|X)$ is the distortion (not $H(X|Z)$).
+
+> **Note:**
+>
+> - There are some notation that is very unclear, at least to me, e.g., what does it mean to have two probability under an expectation operator?
+> - Although interesting, I don't quite understand what does this theory entails.
+>
+> **Takeaway:**
+> "We understand the contrastive loss and auto-encoding loss as implementations of distortions, whereas the rate is mostly determined by the data transformation used."
+
+### Generative-based VLMs
