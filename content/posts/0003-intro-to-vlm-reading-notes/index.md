@@ -69,7 +69,7 @@ Better explaination through an Energy-Based Models point of view [LeCun et al., 
 
 A model $E_\theta$ is parameterized by $\theta$, is trained to assign low energy to observed variables and high energy to unobserved ones. If input data is denoted as $x$, then the energy function is $E_\theta(x)$. The corresponding Boltzmann distribution density function is
 $$
-p_\theta(x) = \frac1{Z_0} \mathrm e^{-E_\theta(x)}
+p_\theta(x) = \frac1{Z_\theta} \mathrm e^{-E_\theta(x)}
 $$
 where $Z_\theta = \sum_x \mathrm e^{-E_\theta(x)}$ is the partition function (normalization coefficient).
 
