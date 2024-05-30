@@ -73,7 +73,7 @@ p_\theta(x) = \frac1{Z_\theta} \mathrm e^{-E_\theta(x)}
 $$
 where $Z_\theta = \sum_x \mathrm e^{-E_\theta(x)}$ is the partition function (normalization coefficient).
 
-Let the target distribution be $P_D$. The traditional maximum likelihood objective is $$ \operatorname*{arg\,min}_\theta \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)] $$
+Let the target distribution be $P_D$. The traditional maximum likelihood objective is $$ \argmin_\theta \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)] $$
 
 > **Note**:
 > $P_\theta(x)$ is the same as $p_\theta(x)$, right?
@@ -129,7 +129,7 @@ Masking can be viewed as a specific form of denoising autoencoder [Vincent et al
 
 **Information theoretic view on VLM objectives.** [Federici et al., 2020] first show that VLMs can be understood to solve a rate-distortion problem. A rate-distortion problem takes the following form [Shwartz and LeCun, 2024]
 $$
-\operatorname*{arg\,max}_{p(z|x)}~~ I(f(X); Z) + \beta \cdot H(X | Z).
+\argmax_{p(z|x)}~~ I(f(X); Z) + \beta \cdot H(X | Z).
 $$
 To recover masked VLM objective, we bound the above equation;
 $$
