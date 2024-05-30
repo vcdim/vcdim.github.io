@@ -81,8 +81,11 @@ Let the target distribution be $P_D$. The traditional maximum likelihood objecti
 
 The gradient of the objective function is
 $$
-\frac{\partial \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)]}{\partial \theta} = \mathbb E_{x^+ \sim P_D(x)} \frac{\partial E_\theta(x^+)}{\partial \theta} - \mathbb E_{x^- \sim P_D(x)} \frac{\partial E_\theta(x^-)}{\partial \theta}
+\frac{\partial \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)]}{\partial \theta} = \mathbb E_{x^+ \sim P_D(x)} \frac{\partial E_\theta(x^+)}{\partial \theta} - \mathbb E_{x^- \sim P_\theta(x)} \frac{\partial E_\theta(x^-)}{\partial \theta}
 $$
+
+> **Why?**
+
 Here $x^-\sim P_\theta(x)$ is most likely intractable. Mitigations can be Markove Chain Monte Carlo (MCMC), Score Matching [Hyvärinen, 2005], Denoising Score Matching [Vincent, 2011], Noise Contrastive Estimation (NCE) [Gutmann and Hyvärinen, 2010].
 
 The intuition behind NCE is sampling from a noise distribution $u' \sim p_n(u')$ might approximate samples from the model distribution well enough, which is of course hard to justify. But it works in recent Self-Supervised Learning literature [Chen et al., 2020].
@@ -91,7 +94,6 @@ The original NCE framework:
 
 - Label $C=1$ for real data distribution
 - Label $C=0$ for noise distribution
-
 The loss funtion is a cross-entropy: $$
 \mathcal L_\text{NCE}(\theta) = -\sum_i \log P(C_i=1|x_i; \theta) - \sum_j \log P(C_j=0| x_j, \theta)
 $$ where $x_i$ sampled from data distribution, $x_j (j\ne i)$ sampled from noise distribution.
@@ -99,9 +101,12 @@ $$ where $x_i$ sampled from data distribution, $x_j (j\ne i)$ sampled from noise
 [Wu et al., 2018] introduced NCE without positive pairs with non-parametric softmax using explicit normalization and a temperature parameter $\tau$.
 
 > **Note**:
-> The objective function in their paper is
-> $$ J(\theta) = -\sum_i \log P(i | f_\theta(x_i))$$ where
-> $$ P(i|\mathbf v) = \frac{\exp(\mathbf v_i^\top \mathbf v/ \tau)}{\sum_j \exp(\mathbf v_j^\top \mathbf v/ \tau)}$$
+> Equation (3) and (2) in [Wu et al. 2018] 
+> \begin{align}
+> J(\theta) &= -\sum_{i=1}^n \log P(i | f_\theta(x_i)) \\\\
+> P(i|\mathbf v) &= \frac{\exp(\mathbf v_i^\top \mathbf v/ \tau)}{\sum_{j=1}^n \exp(\mathbf v_j^\top \mathbf v/ \tau)}
+> \end{align}
+> Here $\mathbf v = f_\theta (x)$ is the feature of image $x$.
 
 [Oord et al., 2018] Contrastive Predictive Coding (CPC) introduced InfoNCE, keeping non-parametric softmax while using positive pairs:
 $$ \mathcal L_\text{infoNCE} = -\sum_{(i,j)\in\mathbb P} \log \left( \frac{\mathrm e^{\text{CoSim}(z_i, z_j) / \tau}}{\sum_k \mathrm e^{\text{CoSim}(z_i, z_k) / \tau}}\right)
@@ -112,8 +117,7 @@ $$
 
 A major draw back is InfoNCE requires a large mini-batch to learn positive and negative samples more effectively.
 
-> **Note**:
-> Why?
+> **Why?**
 
 - The InfoNCE is adopted by Contrastive Language Image Pretraining (CLIP) [Radford et al., 2021].
 - SigLIP [Zhai et al., 2023b] imporved binary InfoNCE to multi-class InfoNCE.
