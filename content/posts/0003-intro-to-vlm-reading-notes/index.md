@@ -73,7 +73,7 @@ p_\theta(x) = \frac1{Z_\theta} \mathrm e^{-E_\theta(x)}
 $$
 where $Z_\theta = \sum_x \mathrm e^{-E_\theta(x)}$ is the partition function (normalization coefficient).
 
-Let the target distribution be $P_D$. The traditional maximum likelihood objective is $$ \mathop{\text{arg\,min}}\limits_\theta \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)] $$
+Let the target distribution be $P_D$. The traditional maximum likelihood objective is $$ \mathop{\text{arg min}}\limits_\theta \mathbb E_{x \sim P_D(x)} [-\log P_\theta(x)] $$
 
 > **Note**:
 > $P_\theta(x)$ is the same as $p_\theta(x)$, right?
@@ -129,7 +129,7 @@ Masking can be viewed as a specific form of denoising autoencoder [Vincent et al
 
 **Information theoretic view on VLM objectives.** [Federici et al., 2020] first show that VLMs can be understood to solve a rate-distortion problem. A rate-distortion problem takes the following form [Shwartz and LeCun, 2024]
 $$
-\mathop{\text{arg\,max}}\limits_{p(z|x)}~~ I(f(X); Z) + \beta \cdot H(X | Z).
+\mathop{\text{arg max}}\limits_{p(z|x)}~~ I(f(X); Z) + \beta \cdot H(X | Z).
 $$
 To recover masked VLM objective, we bound the above equation;
 $$
@@ -139,7 +139,7 @@ Here,
 
 - $\log q(z)$ is the entropy bottleneck.
 - $I(f(X); Z)$ is bounding the rate, removing superfluous information.
-- $H(Z|X)$ is the distortion (not $H(X|Z)$).
+- $H(Z|X)$ is the distortion (not $H(X|Z)$ !).
 
 > **Note:**
 >
