@@ -103,9 +103,9 @@ With `--with-native-comp` flag will result in annoying libgccgit warning and it'
 
 ### Init File Management
 
-The very first step I'd recommend is to use org file (`init.org`) to `init.el` file.
+The very first step I'd recommend is to use org file (`config.org`) to `init.el` file.
 
-To do so, first create the `init.org` file at `~/.emacs.d/` folder with the following content:
+To do so, first create the `config.org` file at `~/.emacs.d/` folder with the following content:
 
 ```org
 #+TITLE: Emacs Config
@@ -115,13 +115,13 @@ To do so, first create the `init.org` file at `~/.emacs.d/` folder with the foll
 
 #+begin_src elisp
 (defun my/org-babel-tangle-config()
-  (when (string-equal (buffer-file-name) (expand-file-name "init.org" user-emacs-directory))
+  (when (string-equal (buffer-file-name) (expand-file-name "config.org" user-emacs-directory))
     (let ((org-confirm-babel-evaluate nil)) (org-babel-tangle))))
 (add-hook 'org-mode-hook (lambda () (add-hook 'after-save-hook 'my/org-babel-tangle-config)))
 #+end_src
 ```
 
-Evaluate the elisp cell by `C-c C-c` and reload org-mode by `M-x org-mode`. On saving the file, you should see the message saying
+Remember to make sure your org file has the exact name as `config.org`. Evaluate the elisp cell by `C-c C-c` and reload org-mode by `M-x org-mode`. On saving the file, you should see the message saying
 
 ```text
 Tangled 1 code block from init.org
@@ -186,13 +186,13 @@ Nothing fancy but already functional.
 
 ## Topics To Discuss in Future Episodes
 
-- Version control
+- ~~Version control~~
+- ~~Chinese font~~
 - Autocompletion
 - Python IDE
 - LaTeX IDE
 - Org Mode for GTD
 - Org Mode for Research
 - Remote development
-- Chinese font
 - Remember session
 - ...

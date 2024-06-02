@@ -43,3 +43,32 @@ Now, to test our workflow, first kill emacs completely by `M-x kill-emacs` and d
 rm -rf ~/.emacs.d
 git clone https://github.com/vcdim/.emacs.d.git
 ```
+
+If the emacs is successfully opened with the same functionality as last post, then we are good.
+
+## Fonts
+
+There are so many posts for setting up Chinese fonts in emacs online:
+
+- [Emacs 中文环境配置](https://blindwith.science/2019/07/443.html/)
+- [经验分享：emacs单独设置中文与英语的字体](https://emacs-china.org/t/emacs/15676/2)
+- [狠狠地折腾了一把Emacs中文字体](https://baohaojun.github.io/perfect-emacs-chinese-font.html)
+
+Just to name a file. It's a clue that this could take some effort to get it working comfortably. Indeed, the default font is not going to work as one Chinese character is not equal to two English characters.
+
+![Table Chinese Font Before](table-chinese-font-before.png)
+
+Here the default English font is Menlo and the default Chinese font is PingFang SC. One [simple solution](https://q3yi.me/post/5_set_different_font_family_for_sc_in_emacs/) that only takes 5 lines of code is
+
+```elisp
+(let ((default-font (font-spec :name "Iosevka" :size 15))
+      (cn-font (font-spec :name "Sarasa Mono SC")))
+  (set-face-attribute 'default nil :font default-font)
+  (dolist (charset '(kana han symbol cjk-misc bopomofo))
+    (set-fontset-font t charset cn-font)))
+```
+
+which uses **Iosevka** and **Sarasa Mono SC**. I know there are more to tweak, like getting Chinese double width (全角) punctuations rendered. But I also know that even VS code is not rendering them in a fully "elegent" way. The is the end result for this tweak:
+![Table Chinese Font After](table-chinese-font-after.png)
+Notice that ¥‘’“”@# are not in double width. And I know that fonts can getting boring. We can tweak this later (or never).
+
