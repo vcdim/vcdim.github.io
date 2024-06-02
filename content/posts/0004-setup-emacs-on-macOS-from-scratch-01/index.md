@@ -4,9 +4,11 @@ date = 2024-06-01T09:17:15-07:00
 toc = true
 +++
 
+## Clean Up and Reinstall
+
 My emacs was installed by [emacs-plus](https://github.com/d12frosted/homebrew-emacs-plus) via [brew](https://brew.sh/). It is of version 29.1 (The latest release is 29.3 at the time of writing.)
 
-## Uninstall
+### Uninstall
 
 There are several things to uninstall. First, the emacs binary is stored at `/opt/homebrew/bin/emacs`. To do so, we run
 
@@ -16,7 +18,7 @@ brew uninstall emacs-plus
 
 Looking at the log, the package is actually stored at `/opt/homebrew/Cellar/emacs-plus@29/29.1`.
 
-## Backup
+### Backup
 
 Of course we have `.emacs.d` folder under `~`. What I wanna do is backup the folder to `.emacs.d.old` by
 
@@ -26,7 +28,7 @@ mv ~/.emacs.d ~/.emacs.d.old
 
 for future reference.
 
-## Things I didn't uninstall
+### Things I didn't uninstall
 
 There are two Automation Apps in Application folder. The `Emacs.app` is basically the code below
 
@@ -60,7 +62,7 @@ Here
 
 - `-F alist` is `--frame-parameters=alist` which sets the parameters for a newly created graphical frame.
 
-## Reinstall
+### Reinstall
 
 To reinstall emacs, simply
 
@@ -93,8 +95,9 @@ Or, if you don't want/need a background service you can just run:
   /opt/homebrew/opt/emacs-plus@29/bin/emacs --fg-daemon
 ```
 
-!!! note
-    With `--with-native-comp` flag will result in annoying libgccgit warning and it's claimed that this is still [experimental](https://github.com/d12frosted/homebrew-emacs-plus?tab=readme-ov-file#gccemacs), hence, we didn't include this flag in installation.
+{{< box info >}}
+With `--with-native-comp` flag will result in annoying libgccgit warning and it's claimed that this is still [experimental](https://github.com/d12frosted/homebrew-emacs-plus?tab=readme-ov-file#gccemacs), hence, we didn't include this flag in installation.
+{{< /box >}}
 
 ## Settings
 
@@ -143,9 +146,16 @@ and the `init.el` should be generated with the same elisp code extracted.
 There are some easy-to-use basic settings that I like to use below:
 
 ```elisp
+;; enable smooth scrolling experience
 (pixel-scroll-precision-mode)
+
+;; default behavior of <home> is the head of document
 (global-set-key (kbd "<home>") 'beginning-of-line)
+
+;; default behavior of <end> is the end of document
 (global-set-key (kbd "<end>") 'end-of-line)
+
+;; this is mostly for Windows
 (global-unset-key (kbd "C-z"))
 ```
 
@@ -154,13 +164,25 @@ There are some easy-to-use basic settings that I like to use below:
 There are a lot of settings that belongs to org-mode. To start with, we enables some essential ones in this post.
 
 ```elisp
+;; I like to use shift to select
 (setq org-support-shift-select t)
+
+;; This will fix the annoying auto formatting in the elisp code of org src
 (setq org-src-preserve-indentation t)
 
+;; Add shortcut to org mode, e.g.
+;; <el<TAB> will insert a elisp code block
 (require 'org-tempo)
 (add-to-list 'org-structure-template-alist '("el" . "src elisp"))
 (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
+(add-to-list 'org-structure-template-alist '("py" . "src python"))
 ```
+
+At the end of today, we have a rudiment version of emacs like below:
+
+![Screenshot of Emacs E01](screenshot-emacs-001.png)
+
+Nothing fancy but already functional.
 
 ## Topics To Discuss in Future Episodes
 
