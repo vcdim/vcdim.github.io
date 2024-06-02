@@ -1,5 +1,5 @@
 +++
-title = 'Fresh Setup Emacs on MacOS 02'
+title = 'Fresh Setup Emacs on macOS - E02'
 date = 2024-06-02T10:50:01-07:00
 toc = true
 +++
