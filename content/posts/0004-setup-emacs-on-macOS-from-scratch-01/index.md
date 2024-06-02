@@ -1,6 +1,6 @@
 +++
 title = 'Setup Emacs on macOS from Scratch 01'
-date = 2024-06-01T9:17:15-07:00
+date = 2024-06-01T09:17:15-07:00
 toc = true
 +++
 
