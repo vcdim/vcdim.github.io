@@ -96,7 +96,9 @@ Or, if you don't want/need a background service you can just run:
 !!! note
     With `--with-native-comp` flag will result in annoying libgccgit warning and it's claimed that this is still [experimental](https://github.com/d12frosted/homebrew-emacs-plus?tab=readme-ov-file#gccemacs), hence, we didn't include this flag in installation.
 
-## Init File Management
+## Settings
+
+### Init File Management
 
 The very first step I'd recommend is to use org file (`init.org`) to `init.el` file.
 
@@ -106,9 +108,7 @@ To do so, first create the `init.org` file at `~/.emacs.d/` folder with the foll
 #+TITLE: Emacs Config
 #+PROPERTY: header-args:elisp :tangle ./init.el
 
-* Initialization
-
-** Use =init.org= to manage =init.el=.
+* Init File Management
 
 #+begin_src elisp
 (defun my/org-babel-tangle-config()
@@ -126,7 +126,7 @@ Tangled 1 code block from init.org
 
 and the `init.el` should be generated with the same elisp code extracted.
 
-## Packages
+### Packages
 
 [melpa](https://melpa.org/#/) has 5,750 packages for emacs at the time of writing. The default package archive contains only `gnu` and `nongnu`, which is far from enough. Another useful package is called [`use-package`](https://github.com/jwiegley/use-package), whose primary purpose is for the configuration and loading of packages. It is already included in emacs 29. To setup the melpa package archive and load use-package, add the following elisp code:
 
@@ -138,7 +138,7 @@ and the `init.el` should be generated with the same elisp code extracted.
 (setq use-package-always-ensure t)
 ```
 
-## Basic Settings
+### Basic Settings
 
 There are some easy-to-use basic settings that I like to use below:
 
@@ -149,7 +149,7 @@ There are some easy-to-use basic settings that I like to use below:
 (global-unset-key (kbd "C-z"))
 ```
 
-## Org (Basic)
+### Org (Basic)
 
 There are a lot of settings that belongs to org-mode. To start with, we enables some essential ones in this post.
 
