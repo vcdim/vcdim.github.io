@@ -1,5 +1,5 @@
 +++
-title = 'Fresh Start Emacs on macOS E01'
+title = 'Fresh Start Emacs on macOS - E01'
 date = 2024-06-01T09:17:15-07:00
 toc = true
 +++
@@ -161,3 +161,16 @@ There are a lot of settings that belongs to org-mode. To start with, we enables 
 (add-to-list 'org-structure-template-alist '("el" . "src elisp"))
 (add-to-list 'org-structure-template-alist '("sh" . "src shell"))
 ```
+
+## Topics To Discuss in Future Episodes
+
+- Version control
+- Autocompletion
+- Python IDE
+- LaTeX IDE
+- Org Mode for GTD
+- Org Mode for Research
+- Remote development
+- Chinese font
+- Remember session
+- ...
