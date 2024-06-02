@@ -2,6 +2,7 @@
 title = 'Fresh Start Emacs on macOS - E01'
 date = 2024-06-01T09:17:15-07:00
 toc = true
+tags = ['emacs']
 +++
 
 ## Clean Up and Reinstall

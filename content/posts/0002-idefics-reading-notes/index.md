@@ -2,6 +2,7 @@
 title = 'Idefics Code Reading Notes'
 date = 2024-04-24T21:24:11-07:00
 toc = true
+tags = ['vlm']
 +++
 
 ## Background

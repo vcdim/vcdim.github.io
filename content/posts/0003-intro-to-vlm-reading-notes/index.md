@@ -2,6 +2,7 @@
 title = 'An Introduction to VLM Reading Notes'
 date = 2024-05-30T10:00:00-07:00
 toc = true
+tags = ['vlm']
 +++
 
 This is a 76 pages paper. The authors come from Meta, U Toronto, CMU, MIT, NYU, Berkeley, U Marland, KAUST, CIFAR AI.
