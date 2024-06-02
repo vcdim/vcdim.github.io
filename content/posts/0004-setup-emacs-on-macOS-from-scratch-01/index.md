@@ -1,5 +1,5 @@
 +++
-title = 'Setup Emacs on macOS from Scratch 01'
+title = 'Fresh Start Emacs on macOS E01'
 date = 2024-06-01T09:17:15-07:00
 toc = true
 +++
@@ -149,7 +149,7 @@ There are some easy-to-use basic settings that I like to use below:
 (global-unset-key (kbd "C-z"))
 ```
 
-## Org
+## Org (Basic)
 
 There are a lot of settings that belongs to org-mode. To start with, we enables some essential ones in this post.
 
