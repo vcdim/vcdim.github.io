@@ -4,7 +4,7 @@ date = 2024-06-02T10:50:01-07:00
 toc = true
 +++
 
-## Setup Version Control
+## Version Control
 
 In order to keep track of the emacs configuration, it is usually a good idea to have a version control so that you can revert to old stable version when your emacs broke or you can jump start to have the same configuration on other (new) environment.
 
@@ -46,7 +46,7 @@ git clone https://github.com/vcdim/.emacs.d.git
 
 If the emacs is successfully opened with the same functionality as last post, then we are good.
 
-## Fonts
+## Chinese Font
 
 There are so many posts for setting up Chinese fonts in emacs online:
 
@@ -54,7 +54,7 @@ There are so many posts for setting up Chinese fonts in emacs online:
 - [经验分享：emacs单独设置中文与英语的字体](https://emacs-china.org/t/emacs/15676/2)
 - [狠狠地折腾了一把Emacs中文字体](https://baohaojun.github.io/perfect-emacs-chinese-font.html)
 
-Just to name a file. It's a clue that this could take some effort to get it working comfortably. Indeed, the default font is not going to work as one Chinese character is not equal to two English characters.
+just to name a few good quality ones, not to mention that many low quality ones. It's a clue that this could take some effort to get it working comfortably. Indeed, the default font is not going to work as one Chinese character is not equal to two English characters.
 
 ![Table Chinese Font Before](table-chinese-font-before.png)
 

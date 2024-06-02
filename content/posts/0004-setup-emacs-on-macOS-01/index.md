@@ -188,11 +188,13 @@ Nothing fancy but already functional.
 
 - ~~Version control~~
 - ~~Chinese font~~
+- Remember session
 - Autocompletion
 - Python IDE
 - LaTeX IDE
 - Org Mode for GTD
 - Org Mode for Research
 - Remote development
-- Remember session
+- RSS reader
+- Project management
 - ...
