@@ -16,10 +16,12 @@ A memu will pop up and click **New repository**. In the Create a new repository 
 Also feel free to add description or README.md as you like. When you are decided, hit the **Create Repository** button.
 
 Next step is to create a git repo in the `~/.emacs.d` folder on your local machine. To do so, you may
+
 ```sh
 cd ~/.emacs.d/
 git init
 ```
+
 It's better to add a `.gitignore` file to avoid submitting too many temporary files. In my first commit, I have
 
 ```git
