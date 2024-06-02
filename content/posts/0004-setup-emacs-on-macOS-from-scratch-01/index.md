@@ -180,7 +180,7 @@ There are a lot of settings that belongs to org-mode. To start with, we enables 
 
 At the end of today, we have a rudiment version of emacs like below:
 
-[<img src="screenshot-emacs-001.png" width="500"/>](screenshot-emacs-001.png)
+![Screenshot of Emacs E01](screenshot-emacs-001.png)
 
 Nothing fancy but already functional.
 
