@@ -71,8 +71,8 @@ brew install emacs-plus --with-ctags --with-dbus --with-debug \
 ```
 The options are explained [here](https://github.com/d12frosted/homebrew-emacs-plus?tab=readme-ov-file#options-1).
 
-- ctags
-- dbus
+- ctags: is a programming tool that generates an index file of names found in source and header files.
+- dbus: is an inter-process communication mechanism for appliaitons residing on the same host. It is short for Desktop Bus.
 
 Once the installation complete, you should see message like below:
 
