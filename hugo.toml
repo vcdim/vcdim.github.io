@@ -1,7 +1,7 @@
 baseURL = 'https://vcdim.github.io/'
 languageCode = 'en-us'
 title = 'Qun Gu'
-theme = "typo"
+theme = ["hugo-shortcode-roneo-collection", "typo"]
 
 # Disable tags, actually, they are rendered as a list, but the idea is to disable them.
 disableKinds = ['taxonomy']
