@@ -47,6 +47,12 @@ git clone https://github.com/vcdim/.emacs.d.git
 
 If the emacs is successfully opened with the same functionality as last post, then we are good.
 
+## Magit
+One powerful package is magit, which is basically ~~e~~ma~~cs~~ + git. To install the package, simply add the following snippet
+```elisp
+(use-package magit)
+```
+
 ## Chinese Font
 
 There are so many posts for setting up Chinese fonts in emacs online:
@@ -72,4 +78,13 @@ Here the default English font is Menlo and the default Chinese font is PingFang 
 which uses **Iosevka** and **Sarasa Mono SC**. I know there are more to tweak, like getting Chinese double width (全角) punctuations rendered. But I also know that even VS code is not rendering them in a fully "elegent" way. The is the end result for this tweak:
 ![Table Chinese Font After](table-chinese-font-after.png)
 Notice that ¥‘’“”@# are not in double width. And I know that fonts can getting boring. We can tweak this later (or never).
+
+## Autosave and Backup Files
+
+You will some times see emacs generate files like `#index.md#`, `.#index.md`, or `index.md~`. By default, emacs has autosave feature to prevent your work from losing. However, this is sometimes annoying. There is a treatment to declutter your working folder though dangerous (not so much actually):
+
+```elisp
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
+```
 
