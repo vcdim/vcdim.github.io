@@ -47,12 +47,16 @@ git clone https://github.com/vcdim/.emacs.d.git
 
 If the emacs is successfully opened with the same functionality as last post, then we are good.
 
-## Magit
-One powerful package is magit, which is basically ~~e~~ma~~cs~~ + git. To install the package, simply add the following snippet
+## magit
+
+One powerful package is [magit](https://magit.vc/), which is basically ~~e~~ma~~cs~~ + git. To install the package, simply add the following snippet
+
 ```elisp
 (use-package magit)
 ```
-It's an amazing package, so it is expected to be able to use out-of-the-box.
+
+It's an amazing package, so it is expected to be able to use out-of-the-box. Below is screenshot of how magic is (ma)git:
+![magit](magit.png)
 
 ## Chinese Font
 
