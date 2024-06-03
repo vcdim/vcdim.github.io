@@ -158,6 +158,9 @@ There are some easy-to-use basic settings that I like to use below:
 
 ;; this is mostly for Windows
 (global-unset-key (kbd "C-z"))
+
+;; use y and n, instead of yes and no
+(setopt use-short-answers t)
 ```
 
 ### Org (Basic)

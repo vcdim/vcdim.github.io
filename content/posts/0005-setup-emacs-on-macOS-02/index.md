@@ -94,7 +94,10 @@ You will some times see emacs generate files like `#index.md#`, `.#index.md`, or
 ```
 
 ## Summary for today
+
 - I am able to edit the markdown file for my hugo post.
 - I am able to push commit to github within emacs.
 - Chinese fonts are displayed in a pleasant way.
 - I don't have syntax highlight for markdown file.
+- Up until today, the emacs should be blazing fast.
+- I don't have spell check, file lint, etc.
