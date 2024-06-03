@@ -52,6 +52,7 @@ One powerful package is magit, which is basically ~~e~~ma~~cs~~ + git. To instal
 ```elisp
 (use-package magit)
 ```
+It's an amazing package, so it is expected to be able to use out-of-the-box.
 
 ## Chinese Font
 
