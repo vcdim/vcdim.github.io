@@ -93,7 +93,7 @@ You will some times see emacs generate files like `#index.md#`, `.#index.md`, or
 (setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 ```
 
-## Summary for today
+## Summary for Today
 
 - I am able to edit the markdown file for my hugo post.
 - I am able to push commit to github within emacs.
