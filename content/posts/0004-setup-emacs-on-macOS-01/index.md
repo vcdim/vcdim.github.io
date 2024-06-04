@@ -196,7 +196,7 @@ Nothing fancy but already functional.
 - ~~Version control~~
 - ~~Chinese font~~
 - ~~Remember session~~
-- Autocompletion
+- ~~Completion~~
 - Python IDE
 - LaTeX IDE
 - Org Mode for GTD
