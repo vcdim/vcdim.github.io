@@ -159,6 +159,9 @@ There are some easy-to-use basic settings that I like to use below:
 ;; this is mostly for Windows
 (global-unset-key (kbd "C-z"))
 
+;; delete directly
+(setq delete-by-moving-to-trash t)
+
 ;; use y and n, instead of yes and no
 (setopt use-short-answers t)
 ```
@@ -192,7 +195,7 @@ Nothing fancy but already functional.
 
 - ~~Version control~~
 - ~~Chinese font~~
-- Remember session
+- ~~Remember session~~
 - Autocompletion
 - Python IDE
 - LaTeX IDE
