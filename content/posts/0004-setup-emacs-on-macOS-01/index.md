@@ -197,6 +197,7 @@ Nothing fancy but already functional.
 - ~~Chinese font~~
 - ~~Remember session~~
 - ~~Completion~~
+- ~~Path and Terminal~~
 - Write hugo blog
 - Python IDE
 - LaTeX IDE
