@@ -141,3 +141,7 @@ To make the minibuffer slightly good looking, I installed `marginalia` and `all-
 ![Completion-08](completion-08.png)
 
 ![Completion-09](completion-09.png)
+
+## Summary
+
+Up till this point, when I delete the `~/emacs.d/` folder and clone it from github, it takes a while to get emacs ready to be use, since downloading packages and compiling may take some time. But start the server the second time is much faster than the first run.
