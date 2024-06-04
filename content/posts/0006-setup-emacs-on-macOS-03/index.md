@@ -37,3 +37,15 @@ When I kill an `emacsclient` frame and open another, the opened buffers will be 
 It's tempting to enable [desktop-save-mode](https://www.gnu.org/software/emacs/manual/html_node/emacs/Saving-Emacs-Sessions.html#Saving-Emacs-Sessions). In fact I tried two hours try to get it working. However, it is not good to use. --- It will not save the desktop when I kill the server. It can only load the desktop once per server start.
 
 There is also an option have have [saveplace package](https://www.emacswiki.org/emacs/SavePlace).
+
+## Markdown Syntax Highlight
+
+In order to edit Hugo post pleasantly, I'd like to have a basic syntax highlighter. To do so, simply add
+
+```elisp
+(use-package markdown-mode)
+```
+
+Below is the rendering after enabling `markdown-mode`.
+![markdown-mode](markdown-mode.png)
+
