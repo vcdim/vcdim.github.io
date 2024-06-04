@@ -40,6 +40,10 @@ Currently, we don't have any completion framework installed, so when I run `find
 
 ## Ivy (DIGRESSION)
 
+{{< box warning >}}
+I didn't use `ivy` in the end of the post.
+{{< /box >}}
+
 After **installing** and **enabling** the ivy package by
 
 ```elisp
