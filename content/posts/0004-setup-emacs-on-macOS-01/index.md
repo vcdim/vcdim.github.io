@@ -197,10 +197,11 @@ Nothing fancy but already functional.
 - ~~Chinese font~~
 - ~~Remember session~~
 - ~~Completion~~
+- Write hugo blog
 - Python IDE
 - LaTeX IDE
 - Org Mode for GTD
-- Org Mode for Research
+- Org Mode for research
 - Remote development
 - RSS reader
 - Project management
