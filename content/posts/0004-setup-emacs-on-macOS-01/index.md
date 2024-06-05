@@ -198,11 +198,13 @@ Nothing fancy but already functional.
 - ~~Remember Session~~
 - ~~Completion~~
 - ~~Path and Terminal~~
-- ~~Remote development~~
-- Project management
-- Python IDE
-- LaTeX IDE
+- ~~Remote Development~~
+- ~~Switch Buffer~~
+- ~~Project Management~~
+- ~~Browse File~~
 - Org Mode for GTD
 - Org Mode for research
+- Python IDE
+- LaTeX IDE
 - RSS reader
 - ...
