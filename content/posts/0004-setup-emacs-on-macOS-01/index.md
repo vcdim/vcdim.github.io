@@ -199,7 +199,6 @@ Nothing fancy but already functional.
 - ~~Completion~~
 - ~~Path and Terminal~~
 - ~~Remote development~~
-- Write Hugo Blog
 - Python IDE
 - LaTeX IDE
 - Org Mode for GTD
