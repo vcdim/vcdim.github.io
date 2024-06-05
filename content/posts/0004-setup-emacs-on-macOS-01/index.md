@@ -193,17 +193,17 @@ Nothing fancy but already functional.
 
 ## Topics To Discuss in Future Episodes
 
-- ~~Version control~~
-- ~~Chinese font~~
-- ~~Remember session~~
+- ~~Version Control~~
+- ~~Chinese Font~~
+- ~~Remember Session~~
 - ~~Completion~~
 - ~~Path and Terminal~~
-- Write hugo blog
+- ~~Remote development~~
+- Write Hugo Blog
 - Python IDE
 - LaTeX IDE
 - Org Mode for GTD
 - Org Mode for research
-- Remote development
 - RSS reader
 - Project management
 - ...
