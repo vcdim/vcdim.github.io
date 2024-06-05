@@ -199,10 +199,10 @@ Nothing fancy but already functional.
 - ~~Completion~~
 - ~~Path and Terminal~~
 - ~~Remote development~~
+- Project management
 - Python IDE
 - LaTeX IDE
 - Org Mode for GTD
 - Org Mode for research
 - RSS reader
-- Project management
 - ...
