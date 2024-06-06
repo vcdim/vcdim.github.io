@@ -52,8 +52,8 @@ To install the package with basic functionality to operate on nodes, we use the 
 (setq org-roam-dailies-directory "daily/")
 
 (setq org-roam-dailies-capture-templates
-      '(("d" "default" entry "* %?"
-         :target (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
+      '(("d" "default" entry "* %?" :target
+	  (file+head "%<%Y-%m-%d>.org" "#+title: %<%Y-%m-%d>\n"))))
 ```
 
 Here, `org-roam-buffer` is the buffer with backlinks. The `org-roam-directory` feels a bit exposed. I would like to have a better way in the future. The folder structure now looks like this
@@ -90,7 +90,6 @@ and (2) add the following code in the config.
   (cl-letf (((symbol-function 'switch-to-buffer-other-window) #'switch-to-buffer))
     (condition-case err (org-roam-dailies-capture-today)
       (error (when (equal err '(error "Abort")) (delete-frame))))))
-
 (defadvice org-capture-finalize (after delete-capture-frame activate)
   (if (equal "capture" (frame-parameter nil 'name))
       (delete-frame)))

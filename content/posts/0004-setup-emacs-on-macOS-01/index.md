@@ -138,6 +138,10 @@ and the `init.el` should be generated with the same elisp code extracted.
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
+
+;; avoid checking signature to avoid error. not a great practise.
+(setq package-check-signature nil)
+
 (require 'use-package)
 (setq use-package-always-ensure t)
 ```
@@ -147,13 +151,18 @@ and the `init.el` should be generated with the same elisp code extracted.
 There are some easy-to-use basic settings that I like to use below:
 
 ```elisp
+;; keep the .emacs.d folder clean
+(setq no-littering-etc-directory (expand-file-name "~/.config/emacs/etc/"))
+(setq no-littering-var-directory (expand-file-name "~/.config/emacs/var/"))
+
+;; we need to have the variable BEFORE the setting!
+(use-package no-littering)
+
 ;; enable smooth scrolling experience
 (pixel-scroll-precision-mode)
 
-;; default behavior of <home> is the head of document
+;; default behavior of <home>/<end> is the head/end of document
 (global-set-key (kbd "<home>") 'beginning-of-line)
-
-;; default behavior of <end> is the end of document
 (global-set-key (kbd "<end>") 'end-of-line)
 
 ;; this is mostly for Windows
@@ -165,6 +174,9 @@ There are some easy-to-use basic settings that I like to use below:
 ;; use y and n, instead of yes and no
 (setopt use-short-answers t)
 
+;; change the tab behavior
+(setq tab-always-indent 'complete)
+
 ;; move the auto generated custom code to a file
 (setq custom-file (locate-user-emacs-file "custom-vars.el"))
 (load custom-file 'noerror 'nomessge)
@@ -172,6 +184,14 @@ There are some easy-to-use basic settings that I like to use below:
 ;; auto-revert
 (global-auto-revert-mode 1)
 (setq global-auto-revert-non-file-buffers t)
+
+;; save-place
+(save-place-mode 1)
+(setq save-place-forget-unreadable-files nil)
+
+;; move backup file (afile~) autosave file (#afile#) to tmp
+(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
 ```
 
 ### Org (Basic)

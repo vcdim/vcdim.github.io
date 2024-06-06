@@ -38,28 +38,28 @@ Currently, we don't have any completion framework installed, so when I run `find
 
 ![Completion-00](completion-00.png)
 
-## Ivy (DIGRESSION)
+<!-- ## Ivy (DIGRESSION) -->
 
-{{< box warning >}}
-I didn't use `ivy` in the end of the post.
-{{< /box >}}
+<!-- {{< box warning >}} -->
+<!-- I didn't use `ivy` in the end of the post. -->
+<!-- {{< /box >}} -->
 
-After **installing** and **enabling** the ivy package by
+<!-- After **installing** and **enabling** the ivy package by -->
 
-```elisp
-(use-package ivy)
-(ivy-mode 1)
-```
+<!-- ```elisp -->
+<!-- (use-package ivy) -->
+<!-- (ivy-mode 1) -->
+<!-- ``` -->
 
-I get the completion dialog like this:
+<!-- I get the completion dialog like this: -->
 
-![Completion-01](completion-01.png)
+<!-- ![Completion-01](completion-01.png) -->
 
-It's slighly nicer looking. I can use keyboard to choose the item I want. Also, going back to the upper level of directory requires only one `<Backspace>`.
+<!-- It's slighly nicer looking. I can use keyboard to choose the item I want. Also, going back to the upper level of directory requires only one `<Backspace>`. -->
 
 ## Vertico
 
-The similar vertical completion is also available in `vertico`. By installing and enabling it like below:
+Vertical completion is available in `vertico`. By installing and enabling it like below:
 
 ```elisp
 (use-package vertico)
@@ -78,7 +78,7 @@ Hence, the configuration becomes
 (use-package vertico)
 (vertico-mode)
 
-(use-package vertico-directory
+(use-package vertico-directoryn
   :after vertico
   :ensure nil
   :bind (:map vertico-map

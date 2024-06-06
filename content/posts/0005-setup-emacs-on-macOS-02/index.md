@@ -26,11 +26,14 @@ git init
 It's better to add a `.gitignore` file to avoid submitting too many temporary files. In my first commit, I have
 
 ```git
-*~
-elpa/archives/
+.DS_Store
+elpa
 ```
 
-in this file. Now you can commit the change in the local repository (by VSCode is easy, but sure you can do it using CLI). Next, I need to set the local repository pointing to the public repository just setup by
+in this file.
+
+
+Now you can commit the change in the local repository (by VSCode is easy, but sure you can do it using CLI). Next, I need to set the local repository pointing to the public repository just setup by
 
 ```sh
 git remote add origin https://github.com/vcdim/.emacs.d.git
@@ -84,14 +87,7 @@ which uses **Iosevka** and **Sarasa Mono SC**. I know there are more to tweak, l
 ![Table Chinese Font After](table-chinese-font-after.png)
 Notice that ¥‘’“”@# are not in double width. And I know that fonts can getting boring. We can tweak this later (or never).
 
-## Autosave and Backup Files
-
-You will some times see emacs generate files like `#index.md#`, `.#index.md`, or `index.md~`. By default, emacs has autosave feature to prevent your work from losing. However, this is sometimes annoying. There is a treatment to declutter your working folder though dangerous (not so much actually):
-
-```elisp
-(setq backup-directory-alist `((".*" . ,temporary-file-directory)))
-(setq auto-save-file-name-transforms `((".*" ,temporary-file-directory t)))
-```
+In the configure file, I put the Chinese font section above the magit session, as I think magit is a package, but font setting is a kind of more global thing.
 
 ## Summary for Today
 

@@ -15,17 +15,11 @@ In last post, we tweaked on the Chinese Fonts. However, if you restart your comp
 	(cn-font (font-spec :name "Sarasa Mono SC")))
     (set-face-attribute 'default nil :font default-font)
     (dolist (charset '(kana han symbol cjk-misc bopomofo))
-      (set-fontset-font t charset cn-font)))
-  )
-
+      (set-fontset-font t charset cn-font))))
 (defun my/frame-behaviors (&optional frame)
-  (with-selected-frame (or frame (selected-frame))
-    (my/set-font)
-    ))
-
+  (with-selected-frame (or frame (selected-frame)) (my/set-font)))
 ;; for server
 (add-hook 'server-after-make-frame-hook 'my/frame-behaviors)
-
 ;; for normal start
 (my/frame-behaviors)
 ```
