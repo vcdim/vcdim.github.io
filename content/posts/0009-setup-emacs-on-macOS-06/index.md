@@ -27,6 +27,19 @@ When deleting the buffer, there will be an annoying prompt that asking if you tr
 (setq ibuffer-expert t)
 ```
 
+## Browse Files
+
+Default file browser in emacs is `dired`, which is called **dir**ectory **ed**itor. However, it is a bit plan to look at.
+![dired](dired.png)
+There is a package can make `dired` looks better, called `diredfl`, where `fl` stands for font lock.
+![alt text](diredfl.png)
+Installation is simple:
+
+```elisp
+(use-package diredfl)
+(setq diredfl-global-mode t)
+```
+
 ## Project Management
 
 Treemacs is a great way to quickly access the projects you are working on. It's like workspace in VSCode. Adding two lines of code will give you the functionality:
@@ -40,15 +53,3 @@ Treemacs is a great way to quickly access the projects you are working on. It's 
 
 Again, here I bind the `C-x t t` to treemacs, as is recommended by the [package](https://github.com/Alexander-Miller/treemacs).
 
-## Browse Files
-
-Default file browser in emacs is `dired`, which is called **dir**ectory **ed**itor. However, it is a bit plan to look at.
-![dired](dired.png)
-There is a package can make `dired` looks better, called `diredfl`, where `fl` stands for font lock.
-![alt text](diredfl.png)
-Installation is simple:
-
-```elisp
-(use-package diredfl)
-(setq diredfl-global-mode t)
-```
