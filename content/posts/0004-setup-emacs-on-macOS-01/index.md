@@ -232,7 +232,7 @@ Nothing fancy but already functional.
 - ~~Browse File~~
 - ~~Org Mode for GTD~~
 - ~~Org Mode for Research~~
-- Python IDE
 - LaTeX IDE
+- Python IDE
 - RSS Reader
 - ...
