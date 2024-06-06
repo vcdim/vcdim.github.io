@@ -231,7 +231,7 @@ Nothing fancy but already functional.
 - ~~Project Management~~
 - ~~Browse File~~
 - ~~Org Mode for GTD~~
-- Org Mode for Research
+- ~~Org Mode for Research~~
 - Python IDE
 - LaTeX IDE
 - RSS Reader
