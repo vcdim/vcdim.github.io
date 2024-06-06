@@ -110,5 +110,3 @@ If other people want to use this config, there are something that definitely sho
 
 - The `org-roam-directory` is unlikely to be the same as mine.
 - I also pushed the `.cache/treemacs-persist` file to the repo. This is saving my time not adding projects again and again to treemacs. But other people will have different structure. So feel free to remove the `.cache` folder.
-
-

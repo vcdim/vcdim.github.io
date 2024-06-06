@@ -164,6 +164,14 @@ There are some easy-to-use basic settings that I like to use below:
 
 ;; use y and n, instead of yes and no
 (setopt use-short-answers t)
+
+;; move the auto generated custom code to a file
+(setq custom-file (locate-user-emacs-file "custom-vars.el"))
+(load custom-file 'noerror 'nomessge)
+
+;; auto-revert
+(global-auto-revert-mode 1)
+(setq global-auto-revert-non-file-buffers t)
 ```
 
 ### Org (Basic)
@@ -202,9 +210,9 @@ Nothing fancy but already functional.
 - ~~Switch Buffer~~
 - ~~Project Management~~
 - ~~Browse File~~
-- Org Mode for GTD
-- Org Mode for research
+- ~~Org Mode for GTD~~
+- Org Mode for Research
 - Python IDE
 - LaTeX IDE
-- RSS reader
+- RSS Reader
 - ...
