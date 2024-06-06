@@ -13,6 +13,8 @@ Citar is a frontend for browse and act on your bib. library. To install it with 
 (use-package citar
   :custom
   (citar-bibliography '("~/Niuwa/03_Qun/common/gq.bib"))
+  (org-cite-insert-processor 'citar)
+  (org-cite-follow-processor 'citar)
   :hook
   (LaTeX-mode . citar-capf-setup)
   (org-mode . citar-capf-setup)
@@ -58,3 +60,45 @@ We want to change to external viewers to view PDF. To do so, oneliner can be
 ```elisp
 (add-to-list 'citar-file-open-functions '("pdf" . citar-file-open-external))
 ```
+
+## Take Notes for a Paper (citar-org-roam)
+
+When you run `citar-open-notes` under current setting, you will face an error:
+
+![citar03](citar03.png)
+
+To avoid this, we can use
+
+```elisp
+(use-package citar-org-roam
+  :after (citar org-roam)
+  :config (citar-org-roam-mode))
+```
+
+The default title format is `{author} :: {title}`. I like to change it to `{title} :: {author}`
+
+```elisp
+(setq citar-org-roam-note-title-template "${title}\n#+author: ${author}\n")
+```
+
+With the configuration above, I am able to create org-roam notes
+
+![citar04](citar04.png)
+
+in the roam directory. 
+
+![citar05](citar05.png)
+
+## Insert Citation / Link to Node
+
+To insert citation, call `org-cite-insert` or `citar-insert-edit` under org mode. You will get a citation link like this.
+
+![citar06](citar06.png)
+
+Pressing `C-c C-o` will open the citar buffer where you can choose to open PDF or notes.
+
+If I want to link a note, I can call `org-roam-node-insert` or `C-c n i`.
+
+![alt text](citar07.png)
+
+Pressing `C-c C-o` will open the notes directly.
