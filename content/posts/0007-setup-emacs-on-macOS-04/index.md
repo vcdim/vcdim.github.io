@@ -38,25 +38,6 @@ Currently, we don't have any completion framework installed, so when I run `find
 
 ![Completion-00](completion-00.png)
 
-<!-- ## Ivy (DIGRESSION) -->
-
-<!-- {{< box warning >}} -->
-<!-- I didn't use `ivy` in the end of the post. -->
-<!-- {{< /box >}} -->
-
-<!-- After **installing** and **enabling** the ivy package by -->
-
-<!-- ```elisp -->
-<!-- (use-package ivy) -->
-<!-- (ivy-mode 1) -->
-<!-- ``` -->
-
-<!-- I get the completion dialog like this: -->
-
-<!-- ![Completion-01](completion-01.png) -->
-
-<!-- It's slighly nicer looking. I can use keyboard to choose the item I want. Also, going back to the upper level of directory requires only one `<Backspace>`. -->
-
 ## Vertico
 
 Vertical completion is available in `vertico`. By installing and enabling it like below:
