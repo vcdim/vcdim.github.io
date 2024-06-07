@@ -4,7 +4,9 @@ baseURL: "https://vcdim.github.io/"
 title: Qun Gu
 # copyright: "© [PaperMod Contributors](https://github.com/adityatelange/hugo-PaperMod/graphs/contributors)"
 paginate: 5
-theme: [PaperMod]
+theme: 
+  - hugo-shortcode-roneo-collection
+  - PaperMod
 
 enableInlineShortcodes: true
 enableRobotsTXT: true
