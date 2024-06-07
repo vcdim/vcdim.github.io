@@ -232,7 +232,6 @@ Nothing fancy but already functional.
 - ~~Browse File~~
 - ~~Org Mode for GTD~~
 - ~~Org Mode for Research~~
-- LaTeX IDE
-- Python IDE
-- RSS Reader
-- ...
+- ~~LaTeX IDE~~
+- ~~Python IDE~~
+- ~~RSS Reader~~
