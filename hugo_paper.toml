@@ -1,7 +1,8 @@
 baseURL = 'https://vcdim.github.io/'
 languageCode = 'en-us'
 title = 'Qun Gu'
-theme = "paper"
+theme = ["hugo-shortcode-roneo-collection", "paper"]
+
 [params]
   # color style
   color = 'linen'                           # linen, wheat, gray, light
