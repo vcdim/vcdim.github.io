@@ -219,19 +219,12 @@ At the end of today, we have a rudiment version of emacs like below:
 
 Nothing fancy but already functional.
 
-## Topics To Discuss in Future Episodes
+Update 2024-06-07: I also added the following basic Org setting
 
-- ~~Version Control~~
-- ~~Chinese Font~~
-- ~~Remember Session~~
-- ~~Completion~~
-- ~~Path and Terminal~~
-- ~~Remote Development~~
-- ~~Switch Buffer~~
-- ~~Project Management~~
-- ~~Browse File~~
-- ~~Org Mode for GTD~~
-- ~~Org Mode for Research~~
-- ~~LaTeX IDE~~
-- ~~Python IDE~~
-- ~~RSS Reader~~
+```elisp
+(setq org-adapt-indentation t)
+(setq org-hide-leading-stars t)
+(setq org-hide-emphasis-markers t)
+```
+
+to make emacs look slightly better.
