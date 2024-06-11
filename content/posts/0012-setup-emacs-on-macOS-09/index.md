@@ -1,5 +1,5 @@
 +++
-title = 'Fresh Setup Emacs on macOS - E09'
+title = 'Fresh Start Emacs on macOS - E09'
 date = 2024-06-09T21:24:18-07:00
 toc = true
 tags = ['emacs']
