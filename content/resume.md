@@ -18,7 +18,7 @@ Quality Score Proximal for Multimodal LLM Training Data Augmentation. Developed 
 
 {{< /collapse >}}
 
-{{< collapse summary="**Amazon.com, Services LLC.**, Research Scientist II, (2021.04.26 - 2023.01.18)" >}}
+{{< collapse summary="**Amazon.com, Services LLC.**, Research Scientist II, (2021.04.26 - 2023.03.31)" >}}
 
 - On-Site Attribution 2.0 for Amazon Live and Video Shopping Experience
   - Developed, validated, and launched OSA model (a deep LSTM-based causal inference framework) for measuring marketing experiences from Amazon Live and VSE business at multiples granularities across Amazon touchpoints.
