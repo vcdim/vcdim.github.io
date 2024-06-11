@@ -27,3 +27,12 @@ Some other tweaks that I find easier to use:
 (setq org-outline-path-complete-in-steps nil)
 (setq org-tags-column -100)
 ```
+
+## More Basic Settings
+
+```elisp
+;; enable truncate lines and visual-line-mode (word-wrap) by default
+(set-default 'truncate-lines t)
+(global-set-key (kbd "C-z") 'toggle-truncate-lines)
+(global-visual-line-mode t)
+```
